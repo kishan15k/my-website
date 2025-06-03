@@ -3,18 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <title>Classy Footwear</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    .product {
-      margin: 20px auto;
-      max-width: 400px;
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+
+    h2 {
       text-align: center;
+      margin: 20px 0;
+      font-size: 28px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Exactly 2 per row */
+      gap: 20px;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .product {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-4px);
     }
 
     .product img {
       width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .brand {
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .original-price {
+      text-decoration: line-through;
+      color: #888;
+      margin-right: 8px;
+      font-size: 14px;
+    }
+
+    .discounted-price {
+      font-weight: bold;
+      font-size: 18px;
+      color: #000;
+    }
+
+    .discount {
+      color: #e53935;
+      font-weight: bold;
+      font-size: 14px;
+      margin: 5px 0;
     }
 
     .buy-button {
@@ -25,27 +80,91 @@
       text-decoration: none;
       border-radius: 25px;
       display: inline-block;
+      font-weight: bold;
     }
 
     .buy-button:hover {
       background: #333;
     }
+
+    @media screen and (max-width: 600px) {
+      .product-grid {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+      }
+    }
   </style>
 </head>
 <body>
-  <h2 style="text-align:center;">✨ Classy Footwear</h2>
 
-  <div class="product">
-    <img src="images/product1a.jpg" alt="Product 1">
-    <a class="buy-button" href="https://example.com/aff1" target="_blank">Buy Now</a>
+  <h2>✨ Classy Footwear</h2>
+
+  <div class="product-grid">
+
+    <div class="product">
+      <img src="https://i.postimg.cc/Y9CT6DFR/vfgmcx40.png" alt="Product 1">
+      <p class="brand">Flipkart</p>
+      <p><span class="original-price">₹1999</span> <span class="discounted-price">₹249</span></p>
+      <p class="discount">62% OFF</p>
+      <a class="buy-button" href="https://fktr.in/NrTj6Ca" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.postimg.cc/fWGDsZmh/bu0g8t7w.png" alt="Product 2">
+      <p class="brand">Flipkart</p>
+      <p><span class="original-price">₹1799</span> <span class="discounted-price">₹299</span></p>
+      <p class="discount">61% OFF</p>
+      <a class="buy-button" href="https://fktr.in/aZFwy99" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.postimg.cc/MZyrc8gw/ygxiq4rp.png" alt="Product 3">
+      <p class="brand">Flipkart</p>
+      <p><span class="original-price">₹1899</span> <span class="discounted-price">₹349</span></p>
+      <p class="discount">55% OFF</p>
+      <a class="buy-button" href="https://fktr.in/SaQ3j89" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.postimg.cc/gksSDHYB/qrxj1pl5.png" alt="Product 4">
+      <p class="brand">Flipkart</p>
+      <p><span class="original-price">₹1599</span> <span class="discounted-price">₹399</span></p>
+      <p class="discount">56% OFF</p>
+      <a class="buy-button" href="https://fktr.in/uwBHgbR" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.postimg.cc/C1CHKw56/7jt93ke5.png" alt="Product 5">
+      <p class="brand">Flipkart</p>
+      <p><span class="original-price">₹1499</span> <span class="discounted-price">₹239</span></p>
+      <p class="discount">57% OFF</p>
+      <a class="buy-button" href="https://fktr.in/dUB6Qxg" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.postimg.cc/9MfFDpQ5/81jq-OKhhdd-L-SX679.jpg" alt="Product 6">
+      <p class="brand">Amazon</p>
+      <p><span class="original-price">₹1899</span> <span class="discounted-price">₹349</span></p>
+      <p class="discount">55% OFF</p>
+      <a class="buy-button" href="https://amzn.to/3Hq5McQ" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.postimg.cc/5yVJwSx2/2y3i9fzm.png" alt="Product 7">
+      <p class="brand">Flipkart</p>
+      <p><span class="original-price">₹1799</span> <span class="discounted-price">₹349</span></p>
+      <p class="discount">58% OFF</p>
+      <a class="buy-button" href="https://fktr.in/y0fYhP8" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.postimg.cc/Dz43HM0z/51-Z1ogs-Yt5-L.jpg" alt="Product 8">
+      <p class="brand">Amazon</p>
+      <p><span class="original-price">₹1399</span> <span class="discounted-price">₹399</span></p>
+      <p class="discount">57% OFF</p>
+      <a class="buy-button" href="https://amzn.to/3SBfnQe" target="_blank">Buy Now</a>
+    </div>
+
   </div>
-
-  <div class="product">
-    <img src="images/product1b.jpg" alt="Product 2">
-    <a class="buy-button" href="https://example.com/aff2" target="_blank">Buy Now</a>
-  </div>
-
-  <!-- Add more products like above -->
 
 </body>
 </html>
