@@ -2,50 +2,267 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Classy Footwear</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reel with Product Frame Instagram Style</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
   <style>
-    .product {
-      margin: 20px auto;
-      max-width: 400px;
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .reel-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 9 / 16;
+      margin: 32px auto;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      background-color: #000;
+      cursor: pointer;
+    }
+    .reel-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 16px;
+    }
+
+    /* Product bar bottom */
+    .products-frame {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0,0.8);
+      padding: 12px 8px;
+      backdrop-filter: blur(6px);
+    }
+    .products-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding-bottom: 4px;
+    }
+    .product-card {
+      flex: 0 0 auto;
+      width: 160px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      overflow: hidden;
+      text-decoration: none;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 8px;
+    }
+    .product-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .brand-name {
+      font-size: 0.75rem;
+      color: #888;
+      margin-bottom: 2px;
       text-align: center;
     }
+    .product-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .price {
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .price .discounted {
+      font-weight: 700;
+      color: #000;
+      margin-right: 4px;
+    }
+    .price .original {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 0.75rem;
+    }
 
-    .product img {
-      width: 100%;
+    /* Tap to unmute */
+    .tap-to-unmute {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 12px 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      font-size: 1rem;
+      font-weight: bold;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 10;
     }
-
-    .buy-button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: black;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      display: inline-block;
-    }
-
-    .buy-button:hover {
-      background: #333;
+    .tap-to-unmute.hidden {
+      opacity: 0;
     }
   </style>
 </head>
 <body>
-  <h2 style="text-align:center;">✨ Classy Footwear</h2>
 
-  <div class="product">
-    <img src="images/product1a.jpg" alt="Product 1">
-    <a class="buy-button" href="https://example.com/aff1" target="_blank">Buy Now</a>
+  <!-- Single Reel -->
+  <div class="reel-wrapper" onclick="unmuteVideo(this)">
+    <video 
+      src="https://res.cloudinary.com/dxrgtwcde/video/upload/v1749194138/jma55jvfsd26xxkd2rpj.mp4" 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+    ></video>
+
+    <div class="tap-to-unmute">Tap to Unmute 🔈</div>
+
+    <!-- Product Frame like Instagram -->
+    <div class="products-frame">
+      <div class="products-scroll">
+        <a href="https://myntr.it/e8i5j53" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/9MvXgcTc/Whats-App-Image-2025-06-06-at-13-16-05-bc7f2547.jpg" alt="Product 1" />
+          <div class="brand-name">Myntra</div>
+          <div class="product-title">VASTRADO Men Solid Casual Blue Shirt</div>
+          <div class="price">
+            <span class="discounted">₹1499</span>
+            <span class="original">₹5231</span>
+          </div>
+        </a>
+
+        <a href="https://bitli.in/En5XOo1" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/bYV185cb/da72p2cm.png" alt="Product 2" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">VASTRADO Men Solid Casual Blue Shirt</div>
+          <div class="price">
+            <span class="discounted">₹759</span>
+            <span class="original">₹1999</span>
+          </div>
+        </a>
+                <a href="https://bitli.in/QavQwKZ" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/4dLHfYMZ/ayz6cu9y.png" alt="Product 2" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">Blue casual shirt</div>
+          <div class="price">
+            <span class="discounted">₹179</span>
+            <span class="original">₹499</span>
+          </div>
+        </a>
+                <a href="https://bitli.in/4Eyo9oO" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/7Z8GZ8BC/drz0fsj0.png" alt="Product 2" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">VASTRADO Men Solid Casual Blue Shirt</div>
+          <div class="price">
+            <span class="discounted">₹779</span>
+            <span class="original">₹1999</span>
+          </div>
+        </a>
+                <a href="https://myntr.it/pB8yN0D" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/FsLtV2hV/Whats-App-Image-2025-06-06-at-13-17-01-e075c403.jpg" alt="Product 2" />
+          <div class="brand-name">Myntra</div>
+          <div class="product-title">Men Slim Fit Ribbed Vest Top</div>
+          <div class="price">
+            <span class="discounted">₹799</span>
+            <span class="original">₹2999</span>
+          </div>
+        </a>
+
+        <a href="https://myntr.it/88T0Ju4" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/T1GKRr2K/Whats-App-Image-2025-06-06-at-13-46-44-61dd6038.jpg" alt="Product 3" />
+          <div class="brand-name">Myntra</div>
+          <div class="product-title">Jockey</div>
+          <div class="price">
+            <span class="discounted">₹399</span>
+            <span class="original">₹1999</span>
+          </div>
+        </a>
+                <a href="https://myntr.it/f5h87nf" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/Pxnx4mwS/Whats-App-Image-2025-06-06-at-13-47-12-2a4c556d.jpg" alt="Product 3" />
+          <div class="brand-name">Myntra</div>
+          <div class="product-title">Analogue Watch A2359</div>
+          <div class="price">
+            <span class="discounted">₹3659</span>
+            <span class="original">₹7999</span>
+          </div>
+        </a>
+                <a href="https://bitli.in/IGpNf4J" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/pXLdqVmM/2xgkp4io.png" alt="Product 3" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">Loose Fit Men White Jeans</div>
+          <div class="price">
+            <span class="discounted">₹459</span>
+            <span class="original">₹2999</span>
+          </div>
+        </a>
+                        <a href="https://bitli.in/IGpNf4J" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/pXLdqVmM/2xgkp4io.png" alt="Product 3" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">Loose Fit Men White Jeans</div>
+          <div class="price">
+            <span class="discounted">₹459</span>
+            <span class="original">₹2999</span>
+          </div>
+        </a>
+                        <a href="https://bitli.in/om8oieN" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/9XJmR3J8/gf398450.png" alt="Product 3" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">Straight Fit Men White Jeans</div>
+          <div class="price">
+            <span class="discounted">₹1650</span>
+            <span class="original">₹1999</span>
+          </div>
+        </a>
+                                <a href="https://bitli.in/pHx65qc" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/HLq29PzF/diiodd1m.png" alt="Product 3" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">Tapered Fit Men White Jeans</div>
+          <div class="price">
+            <span class="discounted">₹659</span>
+            <span class="original">₹999</span>
+          </div>
+        </a>
+                                <a href="https://bitli.in/2uR1Y0k" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/6pSLB1kT/5wdtdwxb.png" alt="Product 3" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">glowzi Glowzi Anti Tarnish Stainless </div>
+          <div class="price">
+            <span class="discounted">₹299</span>
+            <span class="original">₹599</span>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 
-  <div class="product">
-    <img src="images/product1b.jpg" alt="Product 2">
-    <a class="buy-button" href="https://example.com/aff2" target="_blank">Buy Now</a>
-  </div>
+  <script>
+    function unmuteVideo(wrapper) {
+      const video = wrapper.querySelector('video');
+      const overlay = wrapper.querySelector('.tap-to-unmute');
 
-  <!-- Add more products like above -->
+      if (!video.muted) return;
+
+      video.muted = false;
+      video.play();
+
+      overlay.classList.add('hidden');
+    }
+  </script>
 
 </body>
 </html>
