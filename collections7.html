@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reel with Product Frame Instagram Style</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .reel-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 9 / 16;
+      margin: 32px auto;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      background-color: #000;
+      cursor: pointer;
+    }
+    .reel-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 16px;
+    }
+
+    /* Product bar bottom */
+    .products-frame {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0,0.8);
+      padding: 12px 8px;
+      backdrop-filter: blur(6px);
+    }
+    .products-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding-bottom: 4px;
+    }
+    .product-card {
+      flex: 0 0 auto;
+      width: 160px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      overflow: hidden;
+      text-decoration: none;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 8px;
+    }
+    .product-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .brand-name {
+      font-size: 0.75rem;
+      color: #888;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+    .product-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .price {
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .price .discounted {
+      font-weight: 700;
+      color: #000;
+      margin-right: 4px;
+    }
+    .price .original {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 0.75rem;
+    }
+
+    /* Tap to unmute */
+    .tap-to-unmute {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .tap-to-unmute.hidden {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Single Reel -->
+  <div class="reel-wrapper" onclick="unmuteVideo(this)">
+    <video 
+      src="https://res.cloudinary.com/dxrgtwcde/video/upload/v1749199989/WhatsApp_Video_2025-06-06_at_14.21.46_e070bff4_batxov.mp4" 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+    ></video>
+
+    <div class="tap-to-unmute">Tap to Unmute 🔈</div>
+
+    <!-- Product Frame like Instagram -->
+    <div class="products-frame">
+      <div class="products-scroll">
+        <a href="https://bitli.in/b7H9PvZ" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/vB9d0ksn/hrf2hxm7.png" alt="Product 1" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">Casual Brown Shirt</div>
+          <div class="price">
+            <span class="discounted">₹290</span>
+            <span class="original">₹731</span>
+          </div>
+        </a>
+        <a href="https://bitli.in/9cVBxt8" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/Y0zBHFjq/3hu84czx.png" alt="Product 2" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">Men Cream Trousers</div>
+          <div class="price">
+            <span class="discounted">₹999</span>
+            <span class="original">₹1999</span>
+          </div>
+        </a>
+                <a href="https://bitli.in/18lMnA8" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/mrvv1jHg/ta6bdc3o.png" alt="Product 2" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">Solid Casual Brown Shirt</div>
+          <div class="price">
+            <span class="discounted">₹1499</span>
+            <span class="original">₹1599</span>
+          </div>
+        </a>
+                <a href="https://bitli.in/3Ams1Lk" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/NMvnj03y/5bztn1c3.png" alt="Product 2" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">TIMEX Silver Dial Stainless Steel </div>
+          <div class="price">
+            <span class="discounted">₹679</span>
+            <span class="original">₹1999</span>
+          </div>
+        </a>
+                <a href="https://bitli.in/xlFx7sg" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/RVZDFyDT/yj0ymfml.png" alt="Product 2" />
+          <div class="brand-name">Shopsy</div>
+          <div class="product-title">Formal Brown Shirt</div>
+          <div class="price">
+            <span class="discounted">₹799</span>
+            <span class="original">₹1999</span>
+          </div>
+        </a>
+        <a href="https://myntr.it/zfajyDS" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/k4yTMvNZ/Whats-App-Image-2025-06-06-at-14-35-27-0042d93b.jpg" alt="Product 3" />
+          <div class="brand-name">Myntra</div>
+          <div class="product-title">Men Regular Fit Linen</div>
+          <div class="price">
+            <span class="discounted">₹2799</span>
+            <span class="original">₹2999</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function unmuteVideo(wrapper) {
+      const video = wrapper.querySelector('video');
+      const overlay = wrapper.querySelector('.tap-to-unmute');
+
+      if (!video.muted) return;
+
+      video.muted = false;
+      video.play();
+
+      overlay.classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>
