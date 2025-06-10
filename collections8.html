@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reel with Product Frame Instagram Style</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .reel-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 9 / 16;
+      margin: 32px auto;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      background-color: #000;
+      cursor: pointer;
+    }
+    .reel-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 16px;
+    }
+
+    /* Product bar bottom */
+    .products-frame {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0,0.8);
+      padding: 12px 8px;
+      backdrop-filter: blur(6px);
+    }
+    .products-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding-bottom: 4px;
+    }
+    .product-card {
+      flex: 0 0 auto;
+      width: 160px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      overflow: hidden;
+      text-decoration: none;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 8px;
+    }
+    .product-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .brand-name {
+      font-size: 0.75rem;
+      color: #888;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+    .product-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .price {
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .price .discounted {
+      font-weight: 700;
+      color: #000;
+      margin-right: 4px;
+    }
+    .price .original {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 0.75rem;
+    }
+
+    /* Tap to unmute */
+    .tap-to-unmute {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .tap-to-unmute.hidden {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Single Reel -->
+  <div class="reel-wrapper" onclick="unmuteVideo(this)">
+    <video 
+      src="https://res.cloudinary.com/dbvqekmo0/video/upload/v1749551018/WhatsApp_Video_2025-06-10_at_03.35.47_ad0c7a95_yxpnyt.mp4" 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+    ></video>
+
+    <div class="tap-to-unmute">Tap to Unmute 🔈</div>
+
+    <!-- Product Frame like Instagram -->
+    <div class="products-frame">
+      <div class="products-scroll">
+        <a href="https://fktr.in/a1VnxTw" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/d0XgRbw1/4xl-c301-dustygreen-dennis-lingo-original-imah4abf8fxzddpp.webp" alt="Product 1" />
+          <div class="brand-name">Flipkart</div>
+          <div class="product-title">Men Slim Fit Solid</div>
+          <div class="price">
+            <span class="discounted">₹499</span>
+            <span class="original">₹881</span>
+          </div>
+        </a>
+        <a href="https://fktr.in/BfslZkC" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/KztNwwSJ/Whats-App-Image-2025-06-10-at-04-24-55-011944d9.jpg" alt="Product 2" />
+          <div class="brand-name">Flipkart</div>
+          <div class="product-title">White Pure Cotton Trousers</div>
+          <div class="price">
+            <span class="discounted">₹629</span>
+            <span class="original">₹1999</span>
+          </div>
+        </a>
+                <a href="https://myntr.it/CYHRq3G" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/bwM9Jpqm/Whats-App-Image-2025-06-10-at-04-24-54-d952e2a3.jpg" alt="Product 2" />
+          <div class="brand-name">Myntra</div>
+          <div class="product-title">U.S. PITCHERS</div>
+          <div class="price">
+            <span class="discounted">₹549</span>
+            <span class="original">₹1599</span>
+          </div>
+        </a>
+                <a href="https://myntr.it/620Zcld" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/NMvnj03y/5bztn1c3.png" alt="Product 2" />
+          <div class="brand-name">Myntra</div>
+          <div class="product-title">Roadster </div>
+          <div class="price">
+            <span class="discounted">₹675</span>
+            <span class="original">₹1999</span>
+          </div>
+        </a>
+                <a href="https://fktr.in/bCB6Ikz" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/tJV6ZVDJ/l-ss24-csmssrt7008-campus-sutra-original-imah3achpaedqgfg.webp" alt="Product 2" />
+          <div class="brand-name">Flipkart</div>
+          <div class="product-title"> Spread Collar Casual Shirt</div>
+          <div class="price">
+            <span class="discounted">₹607</span>
+            <span class="original">₹1999</span>
+          </div>
+        </a>
+        <a href="https://myntr.it/zfajyDS" class="product-card" target="_blank">
+          <img src="https://i.postimg.cc/hvxrFYk2/m-ss25-csmssrt8071-campus-sutra-original-imah84zqhsgju6ma.webp" alt="Product 3" />
+          <div class="brand-name">Flipkart</div>
+          <div class="product-title">Collar Casual Shirt</div>
+          <div class="price">
+            <span class="discounted">₹629</span>
+            <span class="original">₹2999</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function unmuteVideo(wrapper) {
+      const video = wrapper.querySelector('video');
+      const overlay = wrapper.querySelector('.tap-to-unmute');
+
+      if (!video.muted) return;
+
+      video.muted = false;
+      video.play();
+
+      overlay.classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>
